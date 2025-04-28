@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>युद्ध के बाद की दुनिया</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #111;
+            color: #fff;
+            overflow: hidden;
+            height: 100vh;
+        }
+        
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+        }
+        
+        .slide.active {
+            opacity: 1;
+            z-index: 1;
+        }
+        
+        .title {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            color: #ff6b6b;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.5);
+            padding: 15px 30px;
+            border-radius: 10px;
+        }
+        
+        .poem {
+            font-size: 1.5rem;
+            line-height: 2.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
+            background: rgba(0, 0, 0, 0.6);
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 4px solid #ff6b6b;
+        }
+
+        /* Rest of your CSS remains the same */
+        .controls {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 100;
+            display: flex;
+            gap: 10px;
+        }
+        
+        .control-btn {
+            background: rgba(255, 107, 107, 0.7);
+            border: none;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        
+        .control-btn:hover {
+            background: rgba(255, 107, 107, 0.9);
+            transform: scale(1.1);
+        }
+        
+        .slide-counter {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 100;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.9);
+            background: rgba(0, 0, 0, 0.5);
+            padding: 8px 15px;
+            border-radius: 20px;
+        }
+        
+        .intro-content {
+            max-width: 800px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 40px;
+            border-radius: 10px;
+            border-top: 5px solid #ff6b6b;
+        }
+        
+        .intro-title {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #ff6b6b;
+        }
+        
+        .intro-text {
+            font-size: 1.2rem;
+            line-height: 1.8rem;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+        
+        .author {
+            font-style: italic;
+            color: #aaa;
+            text-align: right;
+            margin-top: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .title {
+                font-size: 2rem;
+            }
+            
+            .poem {
+                font-size: 1.2rem;
+                line-height: 2rem;
+                padding: 20px;
+            }
+            
+            .intro-title {
+                font-size: 1.8rem;
+            }
+            
+            .intro-text {
+                font-size: 1rem;
+                line-height: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Introduction Slide -->
+    <div class="slide active">
+        <div class="intro-content">
+            <h1 class="intro-title">युद्ध के बाद की दुनिया</h1>
+            <div class="intro-text">
+                <p>यह कविता युद्ध के विनाशकारी परिणामों और उसके बाद की त्रासदी को दर्शाती है। यह न सिर्फ भौतिक विनाश को चित्रित करती है, बल्कि उन असंख्य मानवीय कहानियों को भी उजागर करती है जो युद्ध की भेंट चढ़ जाती हैं।</p>
+                <p>प्रस्तुत रचना में कवि ने युद्ध के बाद के उस मौन को शब्द दिए हैं जो सब कुछ कह जाता है, फिर भी सुनने वाला कोई नहीं होता।</p>
+            </div>
+            <div class="author">- एक मानवीय संदेश</div>
+        </div>
+    </div>
+    
+    <!-- Slide 1 - Title -->
+    <div class="slide">
+        <h1 class="title">🌍 युद्ध के बाद की दुनिया 🌍</h1>
+        <div class="poem">
+            <p>गूंजे थे नारे, बरसी थी आग,</p>
+            <p>पर दिलों में रह गया सिर्फ एक ही दाग।</p>
+            <p>बम गिरे थे, दीवारें टूटीं,</p>
+            <p>पर कुछ साँसें भी थीं… जो वापस ना लौटीं।</p>
+        </div>
+    </div>
+    
+    <!-- Slide 2 -->
+    <div class="slide">
+        <div class="poem">
+            <p>जिसने ख्वाबों में कल सजाया था घर,</p>
+            <p>आज ढूँढ रहा है अपनों का निशाँ इधर-उधर।</p>
+            <p>माँ की गोद सूनी पड़ी है,</p>
+            <p>बेटे की तस्वीर धूल में गिरी है।</p>
+        </div>
+    </div>
+    
+    <!-- Slide 3 -->
+    <div class="slide">
+        <div class="poem">
+            <p>कभी जो खेलते थे गलियों में बच्चे,</p>
+            <p>अब बन गए हैं ख़बरों के पन्ने कच्चे।</p>
+            <p>स्कूल की घंटी अब सुनाई नहीं देती,</p>
+            <p>बस तोपों की गूंज रह जाती है गहरी।</p>
+        </div>
+    </div>
+    
+    <!-- Slide 4 -->
+    <div class="slide">
+        <div class="poem">
+            <p>हर तरफ है राख, हर ओर सन्नाटा,</p>
+            <p>सफ़ेद झंडा भी अब लगता है काँपता।</p>
+            <p>ना कोई जीता, ना कोई हारा,</p>
+            <p>बस इंसानियत ने खुद को पुकारा।</p>   
+        </div>
+    </div>
+    
+    <!-- Slide 5 -->
+    <div class="slide">
+        <div class="poem">
+            <p>हमने ज़मीं को ज़ख़्मों से भर दिया,</p>
+            <p>हर आँसू को खामोश कर दिया।</p>
+            <p>युद्ध क्या था? एक चुभती कहानी,</p>
+            <p>जो लिखी गई थी… खून से, और बेमानी।</p>
+        </div>
+    </div>
+    
+    <!-- Controls -->
+    <div class="controls">
+        <button class="control-btn" id="prev-btn">←</button>
+        <button class="control-btn" id="next-btn">→</button>
+    </div>
+    
+    <div class="slide-counter" id="slide-counter">1/6</div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.slide');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            const slideCounter = document.getElementById('slide-counter');
+            
+            let currentSlide = 0;
+            
+            // Initialize
+            updateSlideCounter();
+            
+            // Next slide
+            function nextSlide() {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].classList.add('active');
+                updateSlideCounter();
+            }
+            
+            // Previous slide
+            function prevSlide() {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                slides[currentSlide].classList.add('active');
+                updateSlideCounter();
+            }
+            
+            // Update slide counter
+            function updateSlideCounter() {
+                slideCounter.textContent = `${currentSlide + 1}/${slides.length}`;
+            }
+            
+            // Button events
+            nextBtn.addEventListener('click', nextSlide);
+            prevBtn.addEventListener('click', prevSlide);
+            
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'ArrowRight' || e.key === ' ') {
+                    nextSlide();
+                } else if (e.key === 'ArrowLeft') {
+                    prevSlide();
+                }
+            });
+            
+            // Swipe for touch devices
+            let touchStartX = 0;
+            let touchEndX = 0;
+            
+            document.addEventListener('touchstart', function(e) {
+                touchStartX = e.changedTouches[0].screenX;
+            }, false);
+            
+            document.addEventListener('touchend', function(e) {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            }, false);
+            
+            function handleSwipe() {
+                if (touchEndX < touchStartX - 50) {
+                    nextSlide();
+                }
+                if (touchEndX > touchStartX + 50) {
+                    prevSlide();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
